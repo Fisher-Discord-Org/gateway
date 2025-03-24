@@ -4,3 +4,25 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
+anyhow = "1.0.97"
+config = "0.15.11"
+dotenvy = { version = "0.15.7", optional = true }
+prost = "0.13.5"
+reqwest = { version = "0.12.15", features = ["json"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serenity = "0.12.4"
+tokio = { version = "1.44.1", features = [
+    "macros",
+    "rt-multi-thread",
+    "signal",
+] }
+tonic = "0.12.3"
+tonic-health = "0.12.3"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["json"] }
+
+[build-dependencies]
+tonic-build = "0.12.3"
+
+[features]
+default = ["dep:dotenvy"]
